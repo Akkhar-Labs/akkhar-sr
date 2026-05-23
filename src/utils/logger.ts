@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 
 /**
- * Singleton Logger Utility for Akkhar-SR.
+ * Singleton Logger Utility for Akkhar Code Patcher.
  * Encapsulates the VS Code OutputChannel for centralized diagnostic logging.
  */
 export class AkkharLogger {
@@ -9,7 +9,9 @@ export class AkkharLogger {
   private _outputChannel: vscode.OutputChannel;
 
   private constructor() {
-    this._outputChannel = vscode.window.createOutputChannel('Akkhar-SR Debug');
+    this._outputChannel = vscode.window.createOutputChannel(
+      'Akkhar Code Patcher Debug',
+    );
   }
 
   public static getInstance(): AkkharLogger {

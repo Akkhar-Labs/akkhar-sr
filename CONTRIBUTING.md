@@ -1,4 +1,4 @@
-# Contributing to Akkhar-SR
+# Contributing to Akkhar Code Patcher
 
 Thank you for your interest in the Akkhar Orchestration Protocol. We welcome
 contributions that maintain the architectural integrity and surgical precision

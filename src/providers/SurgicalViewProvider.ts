@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import * as fs from 'fs';
 import { parseBlocks } from '../core/parser';
 import { findMatches, reconstructContent } from '../core/engine';
-import { AkkharSRPreviewProvider } from './DiffPreviewProvider';
+import { AkkharCodePreviewProvider } from './DiffPreviewProvider';
 import { PatchBlock, MatchResult } from '../types/patch';
 
 export class AkkharSRViewProvider implements vscode.WebviewViewProvider {
@@ -11,7 +11,7 @@ export class AkkharSRViewProvider implements vscode.WebviewViewProvider {
   constructor(
     private readonly _extensionUri: vscode.Uri,
     private readonly _outputChannel: vscode.OutputChannel,
-    private readonly _previewProvider: AkkharSRPreviewProvider,
+    private readonly _previewProvider: AkkharCodePreviewProvider,
   ) {}
 
   public resolveWebviewView(
@@ -96,7 +96,7 @@ export class AkkharSRViewProvider implements vscode.WebviewViewProvider {
     }
 
     const previewContent = reconstructContent(docLines, matches);
-    const previewUri = document.uri.with({ scheme: 'akkhar-sr-preview' });
+    const previewUri = document.uri.with({ scheme: 'akkhar-code-patcher-preview' });
     this._previewProvider.setContent(previewUri, previewContent);
 
     const virtualDoc = await vscode.workspace.openTextDocument(previewUri);
@@ -205,7 +205,7 @@ export class AkkharSRViewProvider implements vscode.WebviewViewProvider {
     const tabs = vscode.window.tabGroups.all.flatMap(tg => tg.tabs);
     for (const tab of tabs) {
       if (tab.input instanceof vscode.TabInputTextDiff) {
-        if (tab.input.modified.scheme === 'akkhar-sr-preview') {
+        if (tab.input.modified.scheme === 'akkhar-code-patcher-preview') {
           await vscode.window.tabGroups.close(tab);
         }
       }

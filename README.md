@@ -1,10 +1,10 @@
-# Akkhar-SR (Surgical Search & Replace)
+# Akkhar Code Patcher (Surgical Search & Replace)
 
 ### Akkhar Orchestration Protocol V2
 
-A high-integrity delivery mechanism for AI-generated code patches. Akkhar-SR
-provides a surgical approach to code modification, ensuring context retention
-and atomic execution.
+A high-integrity delivery mechanism for AI-generated code patches. Akkhar Code
+Patcher provides a surgical approach to code modification, ensuring context
+retention and atomic execution.
 
 ## Features
 

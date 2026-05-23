@@ -1,14 +1,14 @@
 {
-  "name": "akkhar-sr",
-  "displayName": "Akkhar-SR",
+  "name": "akkhar-code-patcher",
+  "displayName": "Akkhar Code Patcher",
   "description": "Akkhar Orchestration Protocol V2: Surgical Search & Replace.",
   "publisher": "akkhar-labs",
-  "author": "rahathasan",
+  "author": "Akkhar-Labs",
   "icon": "resources/logo.png",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Akkhar-Labs/akkhar-sr.git"
+    "url": "https://github.com/Akkhar-Labs/akkhar-code-patcher.git"
   },
   "engines": {
     "vscode": "^1.120.0"
@@ -33,24 +33,24 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "akkhar-sr-sidebar",
+          "id": "akkhar-code-patcher-sidebar",
           "title": "Akkhar Orchestration",
           "icon": "$(search-fuzzy)"
         }
       ]
     },
     "views": {
-      "akkhar-sr-sidebar": [
+      "akkhar-code-patcher-sidebar": [
         {
           "type": "webview",
-          "id": "akkhar-sr-view",
+          "id": "akkhar-code-patcher-view",
           "name": "Surgical Replacer"
         }
       ]
     },
     "commands": [
       {
-        "command": "akkhar-sr.executePatch",
+        "command": "akkhar-code-patcher.executePatch",
         "title": "Akkhar: Execute Surgical Patch",
         "category": "Akkhar"
       }

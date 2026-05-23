@@ -1,7 +1,7 @@
 import { PatchBlock, MatchResult } from '../types/patch';
 
 /**
- * Akkhar-SR Core Engine
+ * Akkhar Code Patcher Core Engine
  * Contains pure logic for surgical matching and content reconstruction.
  * Zero dependencies on VS Code APIs to ensure portability and testability.
  */
@@ -81,7 +81,9 @@ export function reconstructContent(
         return '';
       }
       // Strip AI's base indentation and apply the document's original indentation to maintain relative nesting
-      const content = line.startsWith(aiBaseIndent) ? line.substring(aiBaseIndent.length) : line.trimStart();
+      const content = line.startsWith(aiBaseIndent)
+        ? line.substring(aiBaseIndent.length)
+        : line.trimStart();
       return docBaseIndent + content;
     });
 
